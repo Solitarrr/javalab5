@@ -2,15 +2,13 @@ package com.company;
 
 import java.awt.geom.Rectangle2D;
 
-/**
- * Класс для расчёта фрактала Burning Ship
- */
+
+//Класс для расчёта фрактала Burning Ship
 public class BurningShip extends FractalGenerator
 {
     public static final int MAX_ITERATIONS = 2000;
-    /**
-     * Установка начальных значений для формулы расчёта
-     */
+    // Установка начальных значений для формулы расчёта
+    // Метод дает возможность генератору определить наиболее "интересную" область комплексной плоскости для конкретноого фрактала. В качестве аргумента передается прямоугольный объект, а также метод должен изменить поля прямоугольника. Конечный диапазон - (-2 - 1.5i) - (1 + 1.5i).
     public void getInitialRange(Rectangle2D.Double range)
     {
         range.x = -2;
@@ -18,12 +16,10 @@ public class BurningShip extends FractalGenerator
         range.width = 4;
         range.height = 4;
     }
-    /**
-     * Метод, рассчитывающий количество итераций для пикселей
-     */
+     // Метод, рассчитывающий количество итераций для пикселей
     public int numIterations(double x, double y)
     {
-        int iteration = 0;
+        int iteration = 0; //Начать итерацию с нуля
 
         ComplexNums cnum = new ComplexNums(x, y);
         while (iteration < MAX_ITERATIONS && ((cnum.Zreal * cnum.Zreal) + (cnum.Zimaginary * cnum.Zimaginary)) < 4) {
@@ -37,8 +33,6 @@ public class BurningShip extends FractalGenerator
         }
         return iteration;
     }
-    /**
-     * Возвращает имя фрактала "Burning Ship"
-     */
+    // Возвращает имя фрактала "Burning Ship"
     public String toString() { return "Burning Ship"; }
 }

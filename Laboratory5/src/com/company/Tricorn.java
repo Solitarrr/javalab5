@@ -1,15 +1,13 @@
 package com.company;
 import java.awt.geom.Rectangle2D;
 
-/**
- * Класс для расчёта фрактала Tricorn
- */
+
+//Класс является подклассом FractalGenerator. Он используется для вычисления фрактала Tricorn
 public class Tricorn extends FractalGenerator
 {
     public static final int MAX_ITERATIONS = 2000;
-    /**
-     * Установка начальных значений для формулы расчёта
-     */
+    // Аналогично прошлым getInitialRange
+    // Установка начальных значений для формулы расчёта
     public void getInitialRange(Rectangle2D.Double range)
     {
         range.x = -2;
@@ -17,9 +15,7 @@ public class Tricorn extends FractalGenerator
         range.width = 4;
         range.height = 4;
     }
-    /**
-     * Метод, рассчитывающий количество итераций для пикселей
-     */
+    // Метод, рассчитывающий количество итераций для пикселей
     public int numIterations(double x, double y)
     {
         int iteration = 0;
@@ -36,9 +32,7 @@ public class Tricorn extends FractalGenerator
 
         return iteration;
     }
-    /**
-     * Возвращает имя фрактала "Tricorn"
-     */
+    // Возвращает имя фрактала "Tricorn"
     public String toString() {
         return "Tricorn";
     }
